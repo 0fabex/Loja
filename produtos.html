@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charSet="utf-8" />
+    <title>Natika | Semi Jóias e Acessórios.</title>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="description" content="A melhor loja de semi joias" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Natika | Semi Jóias e Acessórios" />
+    <meta property="og:site_name" content="Fabex" />
+    <meta property="og:description" content="Procurando pelo melhor preço? Vem com a Natika!" />
+    <meta property="og:url" content="https://nossafontederiqueza.vercel.app/"/>
+    <meta property="og:image" content="https://nossafontederiqueza.vercel.app/" />
+    
+    <!-- Favicon simplificado para evitar erros -->
+    <link rel="shortcut icon" href="img/favicon.png">
+    
+    <!-- CSS essenciais apenas -->
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Removidos CSS não essenciais que causavam erros -->
+</head>
+<body>
+
+    <!-- navbar top -->
+    <div class="navbar-top">
+        <div class="side-nav-panel-left">
+            <a href="#" data-activates="slide-out-left" class="side-nav-left"><i class="fa fa-bars"></i></a>
+        </div>
+        <!-- site brand -->
+        <div class="site-brand">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Natika Logo" class="nav-logo">
+            </a>
+        </div>
+        <!-- end site brand -->
+        <div class="side-nav-panel-right">
+            <a href="cart.html" class="side-nav-right"><i class="fa fa-shopping-basket"></i><span>2</span></a>
+        </div>
+    </div>
+    <!-- side nav left-->
+    <div class="side-nav-panel-left">
+        <ul id="slide-out-left" class="side-nav side-nav-panel collapsible">
+            <li class="profil">
+                <img src="img/profile.jpg" alt="">
+                <h2>Usuário Fulano</h2>
+                <h6>Cliente Vip</h6>
+            </li>
+            <li class="li-top"><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="produtos.html"><i class="fa fa-shopping-basket"></i>Nossos Produtos</a></li>
+            <li><a href="carrinho.html"><i class="fa fa-shopping-cart"></i>Carrinho de Compras</a></li>
+            <li><a href="checkout.html"><i class="fa fa-send"></i>Pagamento</a></li>
+            <li><a href="blog.html"><i class="fa fa-bold"></i>Blog</a></li>
+            <li><a href="avaliacoes.html"><i class="fa fa-support"></i>Avaliações</a></li>
+            <li><a href="sobrenos.html"><i class="fa fa-user"></i>Sobre Nós</a></li>
+            <li><a href="contact.html"><i class="fa fa-envelope-o"></i>Contato</a></li>
+            <li><a href="login.html"><i class="fa fa-sign-in"></i>Login</a></li>
+            <li><a href="cadastrar.html"><i class="fa fa-user-plus"></i>Cadastre-se</a></li>
+        </ul>
+    </div>
+    
+    <!-- product -->
+    <div class="pages section product">
+        <div class="pages-head">
+            <h3>NOSSOS PRODUTOS</h3>
+        </div>
+        
+        <div class="filter-section">
+            <div class="category-filter">
+                <a href="#" class="active" data-category="all">Todos</a>
+                <a href="#" data-category="Anéis">Anéis</a>
+                <a href="#" data-category="Brincos">Brincos</a>
+                <a href="#" data-category="Colares">Colares</a>
+                <a href="#" data-category="Pulseiras">Pulseiras</a>
+                <a href="#" data-category="Conjuntos">Conjuntos</a>
+                <a href="#" data-category="Chokers">Chokers</a>
+                <a href="#" data-category="Pingentes">Pingentes</a>
+            </div>
+            
+            <div class="input-field">
+                <select id="sort-select">
+                    <option value="">Ordenar por</option>
+                    <option value="1">Novidades</option>
+                    <option value="2">Mais vendidos</option>
+                    <option value="3">Melhores avaliações</option>
+                    <option value="4">Menor preço</option>
+                    <option value="5">Maior preço</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="product-grid">
+                <!-- Os produtos serão carregados dinamicamente aqui -->
+            </div>
+            
+            <div class="load-more">
+                <a href="#" id="load-more-button" class="product-button">Carregar mais produtos</a>
+            </div>
+        </div>
+    </div>
+    <!-- end product -->
+
+    <!-- loader -->
+    <div id="fakeLoader"></div>
+    <!-- end loader -->
+    
+    <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="about-us-foot">
+                <h6>NATIKA</h6>
+                <p>Semi Jóias e Acessórios de qualidade para você se sentir especial.</p>
+            </div>
+            <div class="social-media">
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-instagram"></i></a>
+                <a href=""><i class="fa fa-whatsapp"></i></a>
+            </div>
+            <div class="copyright">
+                <span>© 2025 Natika. Todos os direitos reservados.</span>
+            </div>
+        </div>
+    </div>
+    <!-- end footer -->
+    
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <!-- SDK do Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- Nosso script principal -->
+    <script>
+    // Configuração do Supabase
+    const supabaseUrl = 'https://unwzexiljnemttknupwr.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVud3pleGlsam5lbXR0a251cHdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU1NTIxNzIsImV4cCI6MjA3MTEyODE3Mn0.5QSJF1ktICzTkB1AjVIv5fgvs9M6K9ECchYwlsI2xdA';
+    
+    // Verifica se o jQuery e Materialize estão carregados
+    function checkDependencies() {
+        if (typeof $ === 'undefined') {
+            throw new Error('jQuery não foi carregado corretamente');
+        }
+        if (typeof M === 'undefined' || !M.FormSelect) {
+            throw new Error('Materialize.js não foi carregado corretamente');
+        }
+    }
+    
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+    
+    // Variáveis para paginação
+    let currentPage = 1;
+    const productsPerPage = 12;
+    let allProducts = [];
+    let filteredProducts = [];
+
+    // Função para formatar preço
+    function formatPrice(price) {
+        if (!price) return 'R$ 0,00';
+        return price.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        });
+    }
+
+    // Função para renderizar produtos
+    function renderProducts(products) {
+        const productGrid = document.querySelector('.product-grid');
+        if (!productGrid) {
+            console.error('Elemento .product-grid não encontrado');
+            return;
+        }
+        
+        productGrid.innerHTML = '';
+        
+        if (!products || products.length === 0) {
+            productGrid.innerHTML = '<p class="no-products">Nenhum produto encontrado</p>';
+            return;
+        }
+        
+        products.forEach(produto => {
+            const productCard = document.createElement('div');
+            productCard.className = 'product-card';
+            
+            const estoqueClass = (produto.estoque > 0) ? 'stock' : 'stock out-of-stock';
+            const estoqueText = (produto.estoque > 0) ? 'Disponível' : 'Esgotado';
+            const preco = produto.venda_valor || 0;
+            
+            // Verifica se o produto é novo (últimos 7 dias)
+            const isNew = produto.created_at && 
+                        (new Date() - new Date(produto.created_at)) < (7 * 24 * 60 * 60 * 1000);
+            
+            productCard.innerHTML = `
+                <div class="content">
+                    <img src="${produto.imagem || 'img/placeholder.jpg'}" alt="${produto.titulo || 'Produto sem nome'}" loading="lazy">
+                    ${isNew ? '<span class="new-badge">Novo</span>' : ''}
+                    <h5><a href="shop-single.html?id=${produto.id || ''}">${produto.titulo || 'Produto sem nome'}</a></h5>
+                    <h6 class="price">${formatPrice(preco)}</h6>
+                    <div class="${estoqueClass}">${estoqueText}</div>
+                    <div class="rating">
+                        ${renderRating(produto.avaliacao || 0)}
+                    </div>
+                    <button class="add-to-cart" data-id="${produto.id}">
+                        <i class="fa fa-shopping-cart"></i> Adicionar
+                    </button>
+                </div>
+            `;
+            
+            productGrid.appendChild(productCard);
+        });
+    }
+
+// Função auxiliar para renderizar avaliação em estrelas
+function renderRating(rating) {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 >= 0.5;
+    let starsHtml = '';
+    
+    for (let i = 0; i < 5; i++) {
+        if (i < fullStars) {
+            starsHtml += '<i class="fa fa-star"></i>';
+        } else if (i === fullStars && hasHalfStar) {
+            starsHtml += '<i class="fa fa-star-half-o"></i>';
+        } else {
+            starsHtml += '<i class="fa fa-star-o"></i>';
+        }
+    }
+    
+    return starsHtml;
+}
+
+    // Função para carregar mais produtos
+    function loadMoreProducts() {
+        currentPage++;
+        const startIndex = (currentPage - 1) * productsPerPage;
+        const endIndex = startIndex + productsPerPage;
+        const productsToShow = filteredProducts.slice(0, endIndex);
+        
+        renderProducts(productsToShow);
+        
+        if (endIndex >= filteredProducts.length) {
+            document.getElementById('load-more-button').style.display = 'none';
+        }
+    }
+
+    // Função para filtrar produtos por categoria
+    function filterProducts(category) {
+        currentPage = 1;
+        
+        if (category === 'all') {
+            filteredProducts = [...allProducts];
+        } else {
+            filteredProducts = allProducts.filter(produto => 
+                produto.categoria && produto.categoria.toLowerCase() === category.toLowerCase()
+            );
+        }
+        
+        const initialProducts = filteredProducts.slice(0, productsPerPage);
+        renderProducts(initialProducts);
+        
+        const loadMoreBtn = document.getElementById('load-more-button');
+        if (loadMoreBtn) {
+            loadMoreBtn.style.display = 
+                filteredProducts.length > productsPerPage ? 'block' : 'none';
+        }
+    }
+
+    // Função para ordenar produtos
+    function sortProducts(sortBy) {
+        currentPage = 1;
+        
+        if (!filteredProducts) return;
+        
+        switch(sortBy) {
+            case '1': // Novidades
+                filteredProducts.sort((a, b) => 
+                    new Date(b.created_at || 0) - new Date(a.created_at || 0)
+                );
+                break;
+            case '2': // Mais vendidos
+                filteredProducts.sort((a, b) => 
+                    (b.vendas || 0) - (a.vendas || 0)
+                );
+                break;
+            case '3': // Melhores avaliações
+                filteredProducts.sort((a, b) => 
+                    (b.avaliacao || 0) - (a.avaliacao || 0)
+                );
+                break;
+            case '4': // Menor preço
+                filteredProducts.sort((a, b) => 
+                    (a.venda_valor || 0) - (b.venda_valor || 0)
+                );
+                break;
+            case '5': // Maior preço
+                filteredProducts.sort((a, b) => 
+                    (b.venda_valor || 0) - (a.venda_valor || 0)
+                );
+                break;
+            default:
+                filteredProducts.sort((a, b) => 
+                    (a.titulo || '').localeCompare(b.titulo || '')
+                );
+        }
+        
+        const initialProducts = filteredProducts.slice(0, productsPerPage);
+        renderProducts(initialProducts);
+        
+        const loadMoreBtn = document.getElementById('load-more-button');
+        if (loadMoreBtn) {
+            loadMoreBtn.style.display = 
+                filteredProducts.length > productsPerPage ? 'block' : 'none';
+        }
+    }
+
+    // Função principal para buscar produtos
+    async function fetchProducts() {
+        try {
+            console.log('Iniciando busca de produtos...');
+            const loader = document.getElementById('fakeLoader');
+            if (loader) loader.style.display = 'block';
+            
+            // Verificar conexão com Supabase
+            if (!supabaseClient) {
+                throw new Error('Cliente Supabase não inicializado');
+            }
+            
+            // Buscar produtos no Supabase
+            const { data: produtos, error } = await supabaseClient
+                .from('produtos')
+                .select('*')
+                .order('titulo', { ascending: true });
+            
+            if (error) {
+                console.error('Erro na consulta:', error);
+                throw error;
+            }
+            
+            console.log('Produtos recebidos:', produtos);
+            
+            if (!produtos || produtos.length === 0) {
+                console.warn('Nenhum produto encontrado na tabela');
+            }
+            
+            allProducts = produtos || [];
+            filteredProducts = [...allProducts];
+            
+            renderProducts(filteredProducts.slice(0, productsPerPage));
+            
+            const loadMoreBtn = document.getElementById('load-more-button');
+            if (loadMoreBtn) {
+                loadMoreBtn.style.display = 
+                    filteredProducts.length > productsPerPage ? 'block' : 'none';
+            }
+            
+        } catch (error) {
+            console.error('Erro ao buscar produtos:', error);
+            
+            // Mostrar mensagem de erro para o usuário
+            const productGrid = document.querySelector('.product-grid');
+            if (productGrid) {
+                productGrid.innerHTML = `
+                    <div class="col s12">
+                        <p class="center-align red-text">
+                            Erro ao carregar produtos. Por favor, recarregue a página.
+                        </p>
+                        <p class="center-align">Detalhes: ${error.message}</p>
+                    </div>
+                `;
+            }
+            
+        } finally {
+            const loader = document.getElementById('fakeLoader');
+            if (loader) loader.style.display = 'none';
+        }
+    }
+
+    // Inicialização quando o DOM estiver carregado
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM carregado, inicializando...');
+        
+        try {
+            // Verificar dependências
+            checkDependencies();
+            
+            // Inicializa os selects do Materialize
+            var elems = document.querySelectorAll('select');
+            M.FormSelect.init(elems);
+            
+            // Verificar se o cliente Supabase foi criado
+            if (!supabaseClient) {
+                throw new Error('Falha na inicialização do Supabase');
+            }
+            
+            // Buscar produtos
+            fetchProducts();
+            
+            // Event listeners para filtros de categoria
+            document.querySelectorAll('.category-filter a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector('.category-filter a.active')?.classList.remove('active');
+                    this.classList.add('active');
+                    filterProducts(this.getAttribute('data-category'));
+                });
+            });
+            
+            // Event listener para ordenação
+            const sortSelect = document.getElementById('sort-select');
+            if (sortSelect) {
+                sortSelect.addEventListener('change', function() {
+                    sortProducts(this.value);
+                });
+            }
+            
+            // Event listener para carregar mais produtos
+            const loadMoreBtn = document.getElementById('load-more-button');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    loadMoreProducts();
+                });
+            }
+            
+        } catch (error) {
+            console.error('Erro na inicialização:', error);
+            
+            // Mostrar mensagem de erro para o usuário
+            const productGrid = document.querySelector('.product-grid');
+            if (productGrid) {
+                productGrid.innerHTML = `
+                    <div class="col s12">
+                        <p class="center-align red-text">
+                            Erro ao inicializar a página: ${error.message}
+                        </p>
+                    </div>
+                `;
+            }
+        }
+    });
+
+    // Debug: Verificar se o script está carregando
+    console.log('Script produtos.js carregado');
+</script>
+</body>
+</html>
